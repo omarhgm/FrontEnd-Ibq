@@ -1,0 +1,30 @@
+.navbar {
+  background-color: rgba(255, 255, 255, 0.932) !important;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  min-height: 100px;
+}
+
+.nav-link {
+  color: #1a1a1a;
+}
+
+.nav-link:hover {
+  color: rgba(12, 77, 23, 0.945);
+}
+
+.dropdown-item:hover {
+  color: rgba(28, 90, 38, 0.945);
+}
+
+.navbar-toggler {
+  font-size: 40px;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.logo-brand {
+  min-width: 93px;
+  max-width: 93px;
+}

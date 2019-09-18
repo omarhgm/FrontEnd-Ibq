@@ -1,11 +1,5 @@
 body {
-  font-family: Monaco, Georgia, Times, serif;
-}
-
-.navbar {
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-  min-height: 100px;
+  font-family: Georgia, Times, serif;
 }
 
 h1 {
@@ -80,38 +74,9 @@ a:hover {
 
 /* Logo Section */
 
-.logo-brand {
-  min-width: 95px;
-  max-width: 95px;
-}
-
 /* End Logo Section */
 
 /* Navbar Section */
-
-.navbar {
-  background-color: rgba(255, 255, 255, 0.932) !important;
-}
-
-.nav-link {
-  color: #1a1a1a;
-}
-
-.nav-link:hover {
-  color: rgba(12, 77, 23, 0.945);
-}
-
-.dropdown-item:hover {
-  color: rgba(28, 90, 38, 0.945);
-}
-
-.navbar-toggler {
-  font-size: 40px;
-}
-
-.navbar-toggler:focus {
-  outline: none;
-}
 
 /* End Navbar Section */
 
