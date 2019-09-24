@@ -1,12 +1,15 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { PruevaComponent } from "./prueva/prueva.component";
-import { Prueba2Component } from "./prueba2/prueba2.component";
+import { HomeComponent } from "./pages/home/home.component";
+import { PruevaComponent } from "./components/prueva/prueva.component";
+import { Prueba2Component } from "./components/prueba2/prueba2.component";
 
 const routes: Routes = [
   { path: "prueba", component: PruevaComponent },
-  { path: "prueba2", component: Prueba2Component }
+  { path: "prueba2", component: Prueba2Component },
+  { path: "home", component: HomeComponent },
+  { path: "**", pathMatch: "full", redirectTo: "home" }
 ];
 
 @NgModule({
