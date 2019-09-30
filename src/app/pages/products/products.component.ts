@@ -13,6 +13,7 @@ export class ProductsComponent implements OnInit {
   public page_size: number = 3;
   public page_number: number = 1;
   public pageSizeOptions: number[] = [2, 3, 5, 6];
+  public filterProduct = "";
 
   constructor(private _guantesService: GuantesService) {}
 

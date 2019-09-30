@@ -4,6 +4,15 @@
 <br />
 <section class="mt-5">
   <div class="container">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        name="filterProduct"
+        placeholder="Buscar..."
+        [(ngModel)]="filterProduct"
+      />
+    </div>
     <h2 style="text-align: center">AMBIDERM</h2>
     <div class="table-responsive-sm">
       <table class="table table-xs table-borderless table table-hover">
@@ -15,7 +24,11 @@
         </thead>
         <tbody>
           <tr
-            *ngFor="let producto of guantes | paginate: page_size:page_number"
+            *ngFor="
+              let producto of guantes
+                | filter: filterProduct
+                | paginate: page_size:page_number
+            "
           >
             <td style="text-align: center">
               <h5>{{ producto.nombreGuante }}</h5>
