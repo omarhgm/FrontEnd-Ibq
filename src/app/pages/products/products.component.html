@@ -1,1 +1,134 @@
-<p>products works!</p>
+<br />
+<br />
+<br />
+<br />
+<section class="mt-5">
+  <div class="container">
+    <h2 style="text-align: center">AMBIDERM</h2>
+    <div class="table-responsive-sm">
+      <table class="table table-xs table-borderless table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th style="text-align: center">Producto</th>
+            <th style="text-align: center">Descripci&oacute;n</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let producto of guantes | paginate: page_size:page_number"
+          >
+            <td style="text-align: center">
+              <h5>{{ producto.nombreGuante }}</h5>
+              <br /><img src="{{ producto.urlImage }}" /><img />
+            </td>
+            <td>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th colspan="2">
+                      {{ producto.descripcionGuante }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Color:</td>
+                    <td>{{ producto.colorGuante }}</td>
+                  </tr>
+                  <tr>
+                    <td>Textura:</td>
+                    <td>{{ producto.texturaGuante }}</td>
+                  </tr>
+                  <tr>
+                    <td>Espesor:</td>
+                    <td>{{ producto.espesorGuante }}</td>
+                  </tr>
+                  <tr>
+                    <td>Elongación:</td>
+                    <td>{{ producto.elogacionGuante }}</td>
+                  </tr>
+                  <tr *ngIf="producto.longitudGuante">
+                    <td>Longitud:</td>
+                    <td>{{ producto.longitudGuante }}</td>
+                  </tr>
+                  <tr>
+                    <td>Contenido:</td>
+                    <td>{{ producto.contenidoGuante }}</td>
+                  </tr>
+                  <tr>
+                    <td>Tallas:</td>
+                    <td>{{ producto.tallasGuante }}</td>
+                  </tr>
+                  <tr>
+                    <td>Detales:</td>
+                    <td>{{ producto.detallesGuante }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <mat-paginator
+    [length]="guantes.length"
+    [pageSize]="page_size"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="handlePage($event)"
+  >
+  </mat-paginator>
+</section>
+
+<!-- Footer -->
+<section id="footer">
+  <div class="container">
+    <div class="row text-center text-xs-center text-sm-left text-md-left">
+      <div class="col-xs-12 col-sm-4 col-md-4">
+        <h5>Empresa</h5>
+        <ul class="list-unstyled quick-links">
+          <li>
+            <a href=""
+              ><i class="fa fa-angle-double-right"></i>Industrias
+              Qu&iacute;micas y Biol&oacute;gicas</a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><i class="fa fa-angle-double-right"></i>Lago Xochimilco #133 Col.
+              Anáhuac I sección C.P. 11320, Del. Miguel Hidalgo</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-xs-12 col-sm-4 col-md-4">
+        <h5>Contactanos</h5>
+        <ul class="list-unstyled social quick-links">
+          <li class="list-item">
+            <a href=""><i class="icon ion-md-call"></i> (55) 6818-0938</a>
+          </li>
+          <li class="list-item">
+            <a href=""><i class="icon ion-md-mail"></i> empresa@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-xs-12 col-sm-4 col-md-4">
+        <h5>Contactanos</h5>
+        <ul class="list-unstyled social quick-links">
+          <li class="list-item">
+            <a href=""><i class="icon ion-logo-facebook"></i> Facebook</a>
+          </li>
+          <li class="list-item">
+            <a href=""><i class="icon ion-logo-twitter"></i> Twitter</a>
+          </li>
+          <li class="list-item">
+            <a href=""><i class="icon ion-logo-instagram"></i> Instagram</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer -->

@@ -8,18 +8,6 @@ a:hover {
   border-image: url(../../../assets/img/logo.jpg) 20% round;
 }
 
-.topmargin-xs {
-  margin-top: 15px;
-}
-
-.topmargin-sm {
-  margin-top: 30px;
-}
-
-.topmargin-lg {
-  margin-top: 60px;
-}
-
 /* Button Section */
 
 .btn {

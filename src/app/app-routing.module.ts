@@ -4,10 +4,12 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { HomeComponent } from "./pages/home/home.component";
 import { PruevaComponent } from "./components/prueva/prueva.component";
 import { Prueba2Component } from "./components/prueba2/prueba2.component";
+import { ProductsComponent } from "./pages/products/products.component";
 
 const routes: Routes = [
   { path: "prueba", component: PruevaComponent },
   { path: "prueba2", component: Prueba2Component },
+  { path: "list", component: ProductsComponent },
   { path: "home", component: HomeComponent },
   { path: "**", pathMatch: "full", redirectTo: "home" }
 ];
