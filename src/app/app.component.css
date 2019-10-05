@@ -1,7 +1,3 @@
-body {
-  font-family: Georgia, Times, serif;
-}
-
 h1 {
   font-size: 66px;
   font-weight: 600px;
@@ -11,7 +7,6 @@ h1 {
 h2 {
   font-size: 40px;
   margin-bottom: 30px;
-  color: navy;
 }
 
 h5 {
@@ -37,20 +32,6 @@ section {
 
 .topmargin-lg {
   margin-top: 60px;
-}
-
-.map-responsive {
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
-}
-.map-responsive iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
 }
 
 @media (max-width: 575.98px) {

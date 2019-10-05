@@ -14,6 +14,7 @@ import { ComponentsModule } from "../components/components.module";
 import { DialogSuccessfulComponent } from "../components/dialogs/dialog-successful/dialog-successful.component";
 import { DialogUnsuccessfulComponent } from "../components/dialogs/dialog-unsuccessful/dialog-unsuccessful.component";
 import { DialogAlreadyExistsComponent } from "../components/dialogs/dialog-already-exists/dialog-already-exists.component";
+import { AboutUsComponent } from "./about-us/about-us.component";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DialogAlreadyExistsComponent } from "../components/dialogs/dialog-alrea
     ProductsComponent,
     PaginatePipe,
     FilterPipe,
-    CarproductsComponent
+    CarproductsComponent,
+    AboutUsComponent
   ],
   entryComponents: [
     DialogSuccessfulComponent,

@@ -21,7 +21,11 @@ mat-form-field {
 .btn-blue {
   background-color: #097dc5;
   color: black;
-  border: 0 solid #007b5e;
+}
+
+.btn-green {
+  background-color: #3fb81e;
+  color: black;
 }
 
 .btn i {
