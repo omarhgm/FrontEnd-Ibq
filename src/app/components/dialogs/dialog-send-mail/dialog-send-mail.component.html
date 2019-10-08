@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>Intrduzca su correo</h2>
+
+<form
+  [formGroup]="ownerForm"
+  autocomplete="off"
+  novalidate
+  (ngSubmit)="createOwner(ownerForm.value)"
+  fxLayout="column wrap"
+  fxLayoutAlign="center center"
+  fxLayoutGap="10px"
+>
+  <mat-dialog-content>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="mail"
+        placeholder="Correo"
+        formControlName="mail"
+      />
+      <mat-error *ngIf="hasError('mail', 'required')"
+        >Correo is required</mat-error
+      >
+      <mat-error *ngIf="hasError('mail', 'format')">Correo invalido</mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-card-actions align="center">
+    <button
+      mat-raised-button
+      mat-dialog-close
+      color="primary"
+      [disabled]="!ownerForm.valid"
+      (click)="sendMail()"
+    >
+      Enviar
+    </button>
+    <button type="button" mat-raised-button mat-dialog-close color="warn">
+      Cancelar
+    </button>
+  </mat-card-actions>
+</form>

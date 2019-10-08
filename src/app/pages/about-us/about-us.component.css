@@ -7,6 +7,19 @@ h2 {
   color: navy;
 }
 
+.btn {
+  font-size: 14px;
+  padding: 15px 26px;
+  min-width: 160px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.btn-blue {
+  background-color: #097dc5;
+  color: black;
+}
+
 .map-responsive {
   overflow: hidden;
   padding-bottom: 56.25%;

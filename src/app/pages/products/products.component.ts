@@ -6,6 +6,9 @@ import { CarproductsService } from "src/app/services/carproducts.service";
 import { MatDialog } from "@angular/material";
 import { DialogSuccessfulComponent } from "src/app/components/dialogs/dialog-successful/dialog-successful.component";
 import { DialogAlreadyExistsComponent } from "src/app/components/dialogs/dialog-already-exists/dialog-already-exists.component";
+import { Observable } from "rxjs";
+import { map, startWith } from "rxjs/operators";
+import { FormControl } from "@angular/forms";
 
 @Component({
   selector: "app-products",
@@ -14,10 +17,13 @@ import { DialogAlreadyExistsComponent } from "src/app/components/dialogs/dialog-
 })
 export class ProductsComponent implements OnInit {
   public guantes: Guante[] = [];
+  public guantesName: string[] = [];
   public page_size: number = 3;
   public page_number: number = 1;
   public pageSizeOptions: number[] = [2, 3, 5, 6];
   public filterProduct = "";
+  public filteredOptions: Observable<string[]>;
+  myControl = new FormControl();
 
   constructor(
     private _guantesService: GuantesService,
@@ -28,7 +34,14 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this._guantesService.getGuantes().subscribe(data => {
       this.guantes = data;
+      this.guantes.forEach(element => {
+        this.guantesName.push(element.nombreGuante);
+      });
     });
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(""),
+      map(value => this._filter(value))
+    );
   }
 
   handlePage(e: PageEvent) {
@@ -63,5 +76,13 @@ export class ProductsComponent implements OnInit {
 
   sendCar() {
     this._carproductsService.sendProducts();
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.guantesName.filter(option =>
+      option.toLowerCase().includes(filterValue)
+    );
   }
 }
