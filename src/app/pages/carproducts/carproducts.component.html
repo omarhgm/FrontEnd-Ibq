@@ -6,20 +6,28 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"
-              ><i class="icon ion-md-search" aria-hidden="true"></i
-            ></span>
-          </div>
-          <input
-            type="text"
-            class="form-control"
-            name="filterProduct"
-            placeholder="Buscar..."
-            [(ngModel)]="filterProduct"
-          />
-        </div>
+        <form class="example-form">
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              class="form-control"
+              name="filterProduct"
+              [formControl]="myControl"
+              placeholder="Buscar..."
+              [(ngModel)]="filterProduct"
+              [matAutocomplete]="auto"
+            />
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option
+                *ngFor="let option of filteredOptions | async"
+                [value]="option"
+              >
+                {{ option }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
       </div>
       <div class="col-md-4 offset-md-4">
         <button

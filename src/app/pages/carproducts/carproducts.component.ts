@@ -4,9 +4,11 @@ import { PageEvent } from "@angular/material/paginator";
 import { CarproductsService } from "src/app/services/carproducts.service";
 import { Router } from "@angular/router";
 import { Location } from "@angular/common";
-import { Subscription } from "rxjs";
+import { Subscription, Observable } from "rxjs";
 import { MatDialog } from "@angular/material";
 import { DialogUnsuccessfulComponent } from "src/app/components/dialogs/dialog-unsuccessful/dialog-unsuccessful.component";
+import { FormControl } from "@angular/forms";
+import { startWith, map } from "rxjs/operators";
 
 @Component({
   selector: "app-carproducts",
@@ -15,10 +17,13 @@ import { DialogUnsuccessfulComponent } from "src/app/components/dialogs/dialog-u
 })
 export class CarproductsComponent implements OnInit {
   public carProducts: Guante[] = [];
+  public guantesName: string[] = [];
   public page_size: number = 3;
   public page_number: number = 1;
   public pageSizeOptions: number[] = [2, 3, 5, 6];
   public filterProduct = "";
+  public filteredOptions: Observable<string[]>;
+  myControl = new FormControl();
   subscription: Subscription;
 
   constructor(
@@ -31,7 +36,14 @@ export class CarproductsComponent implements OnInit {
   ngOnInit() {
     this._carproductsService.getProducts().subscribe(data => {
       this.carProducts = data;
+      this.carProducts.forEach(element => {
+        this.guantesName.push(element.nombreGuante);
+      });
     });
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(""),
+      map(value => this._filter(value))
+    );
   }
 
   opendialog() {
@@ -48,6 +60,14 @@ export class CarproductsComponent implements OnInit {
       this.carProducts = data;
     });
     this.opendialog();
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.guantesName.filter(option =>
+      option.toLowerCase().includes(filterValue)
+    );
   }
 
   /*ngOnDestroy() {
