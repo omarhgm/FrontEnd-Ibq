@@ -10,6 +10,8 @@ import { DialogUnsuccessfulComponent } from "src/app/components/dialogs/dialog-u
 import { FormControl } from "@angular/forms";
 import { startWith, map } from "rxjs/operators";
 
+declare function myF(): any;
+
 @Component({
   selector: "app-carproducts",
   templateUrl: "./carproducts.component.html",
@@ -48,6 +50,10 @@ export class CarproductsComponent implements OnInit {
 
   opendialog() {
     this._matDialog.open(DialogUnsuccessfulComponent);
+  }
+
+  My() {
+    myF();
   }
 
   handlePage(e: PageEvent) {

@@ -1,14 +1,16 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
-  name: "filter"
+  name: "pfilter"
 })
-export class FilterPipe implements PipeTransform {
+export class PfilterPipe implements PipeTransform {
   transform(listProducts: any[], serch: any): any {
     const resultFilter: any[] = [];
     if (serch === "") return listProducts;
     listProducts.forEach(product => {
-      if (product.nombreGuante.toLowerCase().indexOf(serch.toLowerCase()) > -1)
+      if (
+        product.nombreProducto.toLowerCase().indexOf(serch.toLowerCase()) > -1
+      )
         resultFilter.push(product);
     });
     return resultFilter;

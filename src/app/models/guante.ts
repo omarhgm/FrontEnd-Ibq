@@ -1,5 +1,6 @@
 export interface Guante {
   idGuante: number;
+  codigoGuante: string;
   nombreGuante: string;
   urlImage: string;
   descripcionGuante: string;

@@ -17,6 +17,7 @@ import { HomeComponent } from "./home/home.component";
 import { ProductsComponent } from "./products/products.component";
 import { PaginatePipe } from "../pipes/paginate.pipe";
 import { FilterPipe } from "../pipes/filter.pipe";
+import { PfilterPipe } from "../pipes/pfilter.pipe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CarproductsComponent } from "./carproducts/carproducts.component";
 import { ComponentsModule } from "../components/components.module";
@@ -25,6 +26,9 @@ import { DialogUnsuccessfulComponent } from "../components/dialogs/dialog-unsucc
 import { DialogAlreadyExistsComponent } from "../components/dialogs/dialog-already-exists/dialog-already-exists.component";
 import { AboutUsComponent } from "./about-us/about-us.component";
 import { DialogSendMailComponent } from "../components/dialogs/dialog-send-mail/dialog-send-mail.component";
+import { OtherproductsComponent } from "./otherproducts/otherproducts.component";
+import { MedicproductsComponent } from './medicproducts/medicproducts.component';
+import { ClothingproductsComponent } from './clothingproducts/clothingproducts.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +36,12 @@ import { DialogSendMailComponent } from "../components/dialogs/dialog-send-mail/
     ProductsComponent,
     PaginatePipe,
     FilterPipe,
+    PfilterPipe,
     CarproductsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    OtherproductsComponent,
+    MedicproductsComponent,
+    ClothingproductsComponent
   ],
   entryComponents: [
     DialogSuccessfulComponent,
