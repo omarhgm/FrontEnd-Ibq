@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class GuantesService {
-  private _url: string = "http://localhost:8080/getguantes";
+  private _url: string = "http://192.168.0.7:8080/getguantes";
 
   constructor(private http: HttpClient) {}
 

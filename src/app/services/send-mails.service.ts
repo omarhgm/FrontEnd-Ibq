@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 export class SendMailsService {
   constructor(private http: HttpClient) {}
 
-  private _url: string = "http://localhost:8080/send";
+  private _url: string = "http://192.168.0.7:8080/send";
 
   sendMail(mail: string): Observable<any> {
     return this.http.post(this._url, mail);
