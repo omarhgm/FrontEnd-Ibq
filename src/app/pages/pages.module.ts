@@ -10,7 +10,8 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatCardModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatTableModule
 } from "@angular/material";
 import { MatCarouselModule } from "@ngmodule/material-carousel";
 import { HomeComponent } from "./home/home.component";
@@ -27,8 +28,9 @@ import { DialogAlreadyExistsComponent } from "../components/dialogs/dialog-alrea
 import { AboutUsComponent } from "./about-us/about-us.component";
 import { DialogSendMailComponent } from "../components/dialogs/dialog-send-mail/dialog-send-mail.component";
 import { OtherproductsComponent } from "./otherproducts/otherproducts.component";
-import { MedicproductsComponent } from './medicproducts/medicproducts.component';
-import { ClothingproductsComponent } from './clothingproducts/clothingproducts.component';
+import { MedicproductsComponent } from "./medicproducts/medicproducts.component";
+import { ClothingproductsComponent } from "./clothingproducts/clothingproducts.component";
+import { ClientesComponent } from "./clientes/clientes.component";
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { ClothingproductsComponent } from './clothingproducts/clothingproducts.c
     AboutUsComponent,
     OtherproductsComponent,
     MedicproductsComponent,
-    ClothingproductsComponent
+    ClothingproductsComponent,
+    ClientesComponent
   ],
   entryComponents: [
     DialogSuccessfulComponent,
@@ -64,7 +67,8 @@ import { ClothingproductsComponent } from './clothingproducts/clothingproducts.c
     MatDatepickerModule,
     MatNativeDateModule,
     MatCardModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatTableModule
   ],
   exports: [HomeComponent]
 })
